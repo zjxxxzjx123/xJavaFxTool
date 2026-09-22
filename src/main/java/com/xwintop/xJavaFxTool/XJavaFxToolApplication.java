@@ -10,7 +10,7 @@
 
 package com.xwintop.xJavaFxTool;
 
-import com.xwintop.xJavaFxTool.controller.IndexController;
+import com.xwintop.xJavaFxTool.controller.EnforcementController;
 import com.xwintop.xJavaFxTool.utils.Config;
 import com.xwintop.xJavaFxTool.utils.Config.Keys;
 import com.xwintop.xJavaFxTool.utils.StageUtils;
@@ -57,7 +57,7 @@ public class XJavaFxToolApplication extends Application {
 //        }
 
         primaryStage.setResizable(true);
-        primaryStage.setTitle(RESOURCE_BUNDLE.getString("Title") + Config.xJavaFxToolVersions);
+        primaryStage.setTitle("执法文书辅助系统");
         primaryStage.setOnCloseRequest(this::confirmExit);
 
         // 只启用新UI，因为：
@@ -72,9 +72,11 @@ public class XJavaFxToolApplication extends Application {
     }
 
     private void loadClassicUI(Stage primaryStage) throws IOException {
-        FXMLLoader fXMLLoader = IndexController.getFXMLLoader();
+        FXMLLoader fXMLLoader = EnforcementController.getFXMLLoader();
         Parent root = fXMLLoader.load();
-        primaryStage.setScene(new Scene(root));
+        primaryStage.setMinWidth(1180);
+        primaryStage.setMinHeight(760);
+        primaryStage.setScene(new Scene(root, 1440, 900));
     }
 
     private void confirmExit(Event event) {

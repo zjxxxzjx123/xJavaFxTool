@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.xwintop.xJavaFxTool.controller.EnforcementController" styleClass="app-root">
+  <stylesheets><URL value="@/css/enforcement.css"/></stylesheets>
+  <left>
+    <VBox prefWidth="230" styleClass="sidebar">
+      <HBox alignment="CENTER_LEFT" spacing="12" styleClass="brand">
+        <Label text="✎" styleClass="brand-icon"/><VBox><Label text="执法文书" styleClass="brand-title"/><Label text="辅助系统" styleClass="brand-subtitle"/></VBox>
+      </HBox>
+      <Label text="工作台" styleClass="nav-section"/>
+      <Button text="⌂   首页" styleClass="nav-button" maxWidth="Infinity"/>
+      <Button text="▣   案件中心" styleClass="nav-button,nav-active" maxWidth="Infinity"/>
+      <Button text="▤   案件模板库" styleClass="nav-button" maxWidth="Infinity"/>
+      <Label text="信息库" styleClass="nav-section"/>
+      <Button text="▦   单位信息库" styleClass="nav-button" maxWidth="Infinity"/>
+      <Button text="⌖   地点信息库" styleClass="nav-button" maxWidth="Infinity"/>
+      <Button text="♙   民警信息库" styleClass="nav-button" maxWidth="Infinity"/>
+      <Button text="▧   辨认照片库" styleClass="nav-button" maxWidth="Infinity"/>
+      <Button text="⚡   快捷插入库" styleClass="nav-button" maxWidth="Infinity"/>
+      <Label text="系统" styleClass="nav-section"/>
+      <Button text="◫   备份中心" styleClass="nav-button" maxWidth="Infinity"/>
+      <Button text="◷   操作记录" styleClass="nav-button" maxWidth="Infinity"/>
+      <Button text="⚙   系统设置" styleClass="nav-button" maxWidth="Infinity"/>
+      <Region VBox.vgrow="ALWAYS"/>
+      <VBox spacing="8" styleClass="clip-card">
+        <HBox><Label text="临时粘贴板" styleClass="clip-title"/><Region HBox.hgrow="ALWAYS"/><Button text="清空" onAction="#clearClipboard" styleClass="link-button"/></HBox>
+        <TextArea fx:id="clipboard" promptText="临时粘贴内容…" wrapText="true" prefRowCount="3"/>
+        <Button text="插入当前编辑位置" onAction="#insertClipboard" maxWidth="Infinity" styleClass="clip-insert"/>
+      </VBox>
+    </VBox>
+  </left>
+  <center>
+    <BorderPane>
+      <top>
+        <VBox>
+          <HBox alignment="CENTER_LEFT" spacing="12" styleClass="topbar">
+            <VBox><Label text="案件工作台" styleClass="page-title"/><Label fx:id="activeCase" text="海公（刑）立字〔2026〕018号 · 网络诈骗案" styleClass="case-number"/></VBox>
+            <Region HBox.hgrow="ALWAYS"/><Label fx:id="saveState" text="● 有未保存的修改" styleClass="save-state"/>
+            <Button text="删除案件" onAction="#deleteCase" styleClass="danger-button"/>
+            <Button text="保存笔录" onAction="#saveAction" styleClass="primary-button"/>
+          </HBox>
+          <HBox spacing="4" styleClass="case-tabs">
+            <Button text="案件概览"/><Button text="案件人员"/><Button text="询问/讯问笔录" styleClass="case-tab-active"/><Button text="辨认笔录"/><Button text="案件文件"/>
+          </HBox>
+        </VBox>
+      </top>
+      <center>
+        <SplitPane dividerPositions="0.43" styleClass="workspace">
+          <VBox spacing="0">
+            <HBox alignment="CENTER_LEFT" spacing="10" styleClass="panel-heading"><VBox><Label text="结构化问答" styleClass="panel-title"/><Label fx:id="questionCount" text="共 0 组问答" styleClass="muted"/></VBox><Region HBox.hgrow="ALWAYS"/><Button text="＋ 新增问答" onAction="#addQuestionAction" styleClass="outline-button"/></HBox>
+            <GridPane hgap="10" vgap="8" styleClass="meta-form">
+              <Label text="文书类型" GridPane.rowIndex="0" GridPane.columnIndex="0"/><ComboBox fx:id="recordType" GridPane.rowIndex="0" GridPane.columnIndex="1" maxWidth="Infinity"/>
+              <Label text="第几次" GridPane.rowIndex="0" GridPane.columnIndex="2"/><Spinner fx:id="recordNumber" GridPane.rowIndex="0" GridPane.columnIndex="3" prefWidth="90"/>
+              <Label text="地点" GridPane.rowIndex="1" GridPane.columnIndex="0"/><TextField fx:id="location" text="海州市公安局办案区询问室一" GridPane.rowIndex="1" GridPane.columnIndex="1" GridPane.columnSpan="3"/>
+              <Label text="询问人" GridPane.rowIndex="2" GridPane.columnIndex="0"/><TextField fx:id="interviewer" text="李明" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+              <Label text="记录人" GridPane.rowIndex="2" GridPane.columnIndex="2"/><TextField fx:id="recorder" text="王强" GridPane.rowIndex="2" GridPane.columnIndex="3"/>
+              <columnConstraints><ColumnConstraints minWidth="55"/><ColumnConstraints hgrow="ALWAYS"/><ColumnConstraints minWidth="55"/><ColumnConstraints hgrow="ALWAYS"/></columnConstraints>
+            </GridPane>
+            <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" styleClass="qa-scroll"><VBox fx:id="questionList" spacing="10" styleClass="question-list"><padding><Insets top="12" right="14" bottom="18" left="14"/></padding></VBox></ScrollPane>
+          </VBox>
+          <VBox>
+            <HBox alignment="CENTER_LEFT" spacing="8" styleClass="editor-toolbar"><Label text="完整文书编辑" styleClass="panel-title"/><Separator orientation="VERTICAL"/><ComboBox value="宋体" prefWidth="90"/><ComboBox value="小四" prefWidth="72"/><Button text="B" styleClass="format-bold"/><Button text="I" styleClass="format-italic"/><Button text="U" styleClass="format-underline"/><Region HBox.hgrow="ALWAYS"/><Button text="查找替换"/><Button text="导出 Word"/></HBox>
+            <StackPane VBox.vgrow="ALWAYS" styleClass="paper-surround"><TextArea fx:id="documentEditor" wrapText="true" styleClass="document-editor" StackPane.alignment="TOP_CENTER"><StackPane.margin><Insets top="20" right="30" bottom="20" left="30"/></StackPane.margin></TextArea></StackPane>
+          </VBox>
+        </SplitPane>
+      </center>
+    </BorderPane>
+  </center>
+</BorderPane>

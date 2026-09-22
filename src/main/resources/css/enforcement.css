@@ -1,0 +1,33 @@
+.root { -fx-font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif; -fx-font-size: 13px; -fx-background-color: #f3f6fa; }
+.sidebar { -fx-background-color: #12396b; -fx-padding: 0 12 16 12; }
+.brand { -fx-padding: 22 12 24 12; }
+.brand-icon { -fx-font-size: 34px; -fx-text-fill: white; -fx-font-weight: bold; }
+.brand-title { -fx-font-size: 19px; -fx-font-weight: bold; -fx-text-fill: white; }
+.brand-subtitle { -fx-font-size: 11px; -fx-text-fill: #a9c5e7; }
+.nav-section { -fx-padding: 14 10 6 10; -fx-text-fill: #7397c2; -fx-font-size: 11px; }
+.nav-button { -fx-alignment: CENTER_LEFT; -fx-padding: 10 14; -fx-background-color: transparent; -fx-text-fill: #d4e3f5; -fx-cursor: hand; }
+.nav-button:hover { -fx-background-color: #1c4b81; }
+.nav-active { -fx-background-color: #2768ad; -fx-text-fill: white; -fx-font-weight: bold; }
+.clip-card { -fx-background-color: #0c2e58; -fx-background-radius: 7; -fx-padding: 12; }
+.clip-title { -fx-text-fill: white; -fx-font-weight: bold; }.link-button { -fx-background-color: transparent; -fx-text-fill: #81b9f2; -fx-padding: 0; }
+.clip-card .text-area { -fx-font-size: 12px; }.clip-insert { -fx-background-color: #2469ad; -fx-text-fill: white; }
+.topbar { -fx-background-color: white; -fx-padding: 15 22; -fx-border-color: transparent transparent #dce4ee transparent; }
+.page-title { -fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #172b45; }.case-number,.muted { -fx-text-fill: #76869a; }
+.save-state { -fx-text-fill: #e28b20; }.primary-button { -fx-background-color: #1769aa; -fx-text-fill: white; -fx-padding: 9 17; -fx-background-radius: 4; }
+.danger-button { -fx-background-color: #fff4f4; -fx-text-fill: #bd3a3a; -fx-border-color: #efc5c5; -fx-border-radius: 4; -fx-background-radius: 4; -fx-padding: 8 14; }
+.case-tabs { -fx-background-color: white; -fx-padding: 0 22; }.case-tabs .button { -fx-background-color: transparent; -fx-padding: 13 18; -fx-text-fill: #5f7084; }
+.case-tabs .case-tab-active { -fx-text-fill: #1769aa; -fx-font-weight: bold; -fx-border-color: transparent transparent #1769aa transparent; -fx-border-width: 0 0 3 0; }
+.workspace { -fx-padding: 14; -fx-background-color: #edf2f7; }.workspace > .split-pane-divider { -fx-padding: 0 4; -fx-background-color: transparent; }
+.workspace > .split-pane-divider .horizontal-grabber { -fx-background-color: #c7d2df; }
+.panel-heading,.editor-toolbar { -fx-background-color: white; -fx-padding: 13 16; -fx-border-color: #dfe6ee; -fx-border-width: 1 1 1 1; }
+.panel-title { -fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #223a56; }.outline-button { -fx-background-color: white; -fx-text-fill: #1769aa; -fx-border-color: #88afd1; -fx-border-radius: 4; }
+.meta-form { -fx-background-color: #f9fbfd; -fx-padding: 12 16; -fx-border-color: transparent #dfe6ee #dfe6ee #dfe6ee; }
+.qa-scroll { -fx-background: white; -fx-border-color: transparent #dfe6ee #dfe6ee #dfe6ee; }.question-list { -fx-background-color: white; }
+.qa-row { -fx-padding: 10 12 12 12; -fx-background-color: #f8fafc; -fx-border-color: #e1e7ee; -fx-border-radius: 5; -fx-background-radius: 5; }
+.qa-tools { -fx-alignment: CENTER_LEFT; }.qa-index { -fx-font-weight: bold; -fx-text-fill: #31516f; }.flat-button { -fx-background-color: transparent; -fx-text-fill: #6b7d90; -fx-padding: 2 5; }
+.qa-editor { -fx-background-color: transparent; -fx-border-color: transparent transparent #8ca2b7 transparent; -fx-border-width: 0 0 1 0; -fx-padding: 1 0; -fx-font-size: 14px; }
+.qa-editor .content { -fx-background-color: transparent; }.qa-editor .scroll-pane { -fx-hbar-policy: never; -fx-vbar-policy: never; }
+.editor-toolbar .button,.editor-toolbar .combo-box { -fx-background-color: #f6f8fa; -fx-border-color: #dce3ea; -fx-border-radius: 3; -fx-background-radius: 3; }
+.format-bold { -fx-font-weight: bold; }.format-italic { -fx-font-style: italic; }.format-underline { -fx-underline: true; }
+.paper-surround { -fx-background-color: #d9e0e8; }.document-editor { -fx-max-width: 760px; -fx-background-color: white; -fx-effect: dropshadow(gaussian, #8793a0, 10, 0.15, 0, 2); -fx-font-family: "SimSun", serif; -fx-font-size: 15px; -fx-line-spacing: 7px; -fx-padding: 32px 38px; }
+.document-editor .content { -fx-background-color: white; }
