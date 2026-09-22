@@ -84,5 +84,8 @@
         </VBox>
       </ScrollPane>
     </Tab>
+    <Tab closable="false" text="%guessNumberGame">
+      <fx:include source="game/GuessNumberGame.fxml"/>
+    </Tab>
   </TabPane>
 </AnchorPane>

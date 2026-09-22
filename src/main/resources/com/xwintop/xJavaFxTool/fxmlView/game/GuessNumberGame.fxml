@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import java.net.URL?>
+
+<AnchorPane prefHeight="620.0" prefWidth="900.0" styleClass="game-background"
+            xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.xwintop.xJavaFxTool.controller.game.GuessNumberGameController">
+  <stylesheets>
+    <URL value="@/css/guess-number-game.css"/>
+  </stylesheets>
+  <VBox alignment="CENTER" spacing="22.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+        AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+    <padding>
+      <Insets bottom="48.0" left="32.0" right="32.0" top="48.0"/>
+    </padding>
+    <Label styleClass="game-emoji" text="🎯"/>
+    <Label styleClass="game-title" text="猜数字"/>
+    <Label styleClass="game-subtitle" text="我想好了一个 1 到 100 之间的整数"/>
+    <VBox alignment="CENTER" maxWidth="430.0" spacing="18.0" styleClass="game-card">
+      <Label fx:id="messageLabel" styleClass="game-message-hint" text="输入一个数字，看看你能几次猜中" wrapText="true"/>
+      <TextField fx:id="guessField" alignment="CENTER" maxWidth="260.0" onAction="#submitGuess"
+                 promptText="输入 1 - 100" styleClass="game-input"/>
+      <HBox alignment="CENTER" spacing="12.0">
+        <Button fx:id="guessButton" defaultButton="true" onAction="#submitGuess" styleClass="game-primary-button" text="猜一下"/>
+        <Button onAction="#restartGame" styleClass="game-secondary-button" text="重新开始"/>
+      </HBox>
+      <Label fx:id="attemptsLabel" styleClass="game-attempts" text="已猜次数：0"/>
+    </VBox>
+    <Label styleClass="game-tip" text="提示：每次猜测后，我会告诉你答案更大还是更小。"/>
+  </VBox>
+</AnchorPane>
